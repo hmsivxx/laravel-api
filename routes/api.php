@@ -17,4 +17,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('images', 'ImageController');
+Route::get('/images', 'ImageController@index');
+
+Route::get('/images/{id}', 'ImageController@show');
+
+Route::post('/images', 'ImageController@store');
+
+Route::delete('/images/{id}', 'ImageController@destroy');
+
+Route::put('/images/{id}', 'ImageController@update');

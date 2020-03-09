@@ -1,0 +1,121 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://jespper.ci2.io/root.json",
+    "type": "object",
+    "title": "images",
+    "required": ["app", "id", "images", "created"],
+    "properties": {
+        "app": {
+            "$id": "#/properties/app",
+            "type": "object",
+            "title": "App",
+            "required": ["id", "name"],
+            "properties": {
+                "id": {
+                    "$id": "#/properties/app/properties/id",
+                    "type": "string",
+                    "title": "App ID",
+                    "default": "",
+                    "pattern": "^(.*)$",
+                    "examples": ["admin-00k"]
+                },
+                "name": {
+                    "$id": "#/properties/app/properties/name",
+                    "type": "string",
+                    "title": "App name",
+                    "default": "",
+                    "pattern": "^(.*)$",
+                    "examples": ["Admin 00K"]
+                }
+            }
+        },
+        "images": {
+            "$id": "#/properties/images",
+            "type": "array",
+            "title": "Images",
+            "items": {
+                "$id": "#/properties/images/items",
+                "type": "object",
+                "default": "",
+                "required": ["id", "source"],
+                "properties": {
+                    "id": {
+                        "$id": "#/properties/images/items/properties/id",
+                        "type": ["string", "null"],
+                        "title": "Image ID",
+                        "default": "",
+                        "pattern": "^(.*)$"
+                    },
+                    "source": {
+                        "$id": "#/properties/images/items/properties/source",
+                        "type": ["string", "null"],
+                        "title": "Image URL",
+                        "default": "",
+                        "pattern": "^(.*)$"
+                    },
+                    "position": {
+                        "$id": "#/properties/images/items/properties/position",
+                        "type": ["integer", "null"],
+                        "title": "Position",
+                        "default": ""
+                    },
+                    "is_main": {
+                        "$id": "#/properties/images/items/properties/is_main",
+                        "type": ["boolean", "null"],
+                        "title": "Main image",
+                        "default": false,
+                        "examples": [false]
+                    }
+                }
+            }
+        },
+        "id": {
+            "$id": "#/properties/id",
+            "type": "string",
+            "title": "ID",
+            "default": "",
+            "pattern": "^(.*)$",
+            "examples": ["ca34ndr54vcde3"]
+        },
+        "type": {
+            "$id": "#/properties/type",
+            "type": ["string", "null"],
+            "title": "Type",
+            "default": "",
+            "pattern": "^(.*)$",
+            "examples": ["banner"]
+        },
+        "destination": {
+            "$id": "#/properties/destination",
+            "type": ["string", "null"],
+            "title": "Destination",
+            "default": "",
+            "pattern": "^(.*)$",
+            "examples": ["homepage"]
+        },
+        "created": {
+            "$id": "#/properties/created",
+            "type": "string",
+            "title": "Created date",
+            "default": "",
+            "pattern": "^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$",
+            "examples": ["1970-01-01T14:00:06.000Z"]
+        },
+        "updated": {
+            "$id": "#/properties/updated",
+            "type": ["string", "null"],
+            "title": "Updated date",
+            "default": "",
+            "pattern": "^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$",
+            "examples": ["1970-01-01T14:00:06.000Z"]
+        },
+        "removed": {
+            "$id": "#/properties/removed",
+            "type": ["boolean", "null"],
+            "title": "Removed",
+            "default": false,
+            "examples": [false]
+        }
+    }
+}
